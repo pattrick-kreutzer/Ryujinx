@@ -9,13 +9,15 @@ namespace Ryujinx.Graphics.GAL
         public BufferHandle Handle { get; }
 
         public int Offset { get; }
-        public int Size { get; }
+        public int Size   { get; }
+        public bool Write { get; }
 
-        public BufferRange(BufferHandle handle, int offset, int size)
+        public BufferRange(BufferHandle handle, int offset, int size, bool write = false)
         {
             Handle = handle;
             Offset = offset;
-            Size = size;
+            Size   = size;
+            Write  = write;
         }
     }
 }
